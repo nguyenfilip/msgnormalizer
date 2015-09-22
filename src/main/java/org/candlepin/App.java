@@ -56,12 +56,10 @@ public class App {
 						writer.write(line);
 						continue;
 					}
-//					String oldString = line;
-					String newString = line;
 					for (LineModifier modifier : lineModifiers) {
-						newString = modifier.modify(newString);
+						line = modifier.modify(line);
 					}
-					writer.write(newString);
+					writer.write(line);
 				}
 			}
 
